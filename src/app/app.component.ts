@@ -10,16 +10,11 @@ import { getTimezoneName } from './timeZone';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  //instance creation
-  @ViewChild('datepickerInstance') datePicker: DatePickerComponent;
   public value: Date = new Date();
-  public time;
-  constructor() {
-    //this.time = new TimeZone();
-  }
-
+  public dateFormat: string;
+  
   ngAfterViewInit(): void {
     // based on system time zone the datepicker display format will be updated
-    this.datePicker.format = getTimezoneName();
+    this.dateFormat = getTimezoneName();
   }
 }
